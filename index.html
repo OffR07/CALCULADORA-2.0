@@ -1,0 +1,64 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Juros Compostos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Juros Compostos</h1>
+        <form id="compoundInterestForm">
+            <div class="input-group">
+                <label for="initialInvestment">Investimento Inicial (R$)</label>
+                <input type="number" id="initialInvestment" step="0.01" min="0" required>
+            </div>
+            
+            <div id="monthlyContributionsContainer">
+                <div class="input-group">
+                    <label for="monthlyContributions">Contribuições Mensais (R$)</label>
+                    <div id="monthlyContributionInputs"></div>
+                </div>
+                <button type="button" id="addMonthlyContribution">+ Adicionar Contribuição Mensal</button>
+            </div>
+            
+            <div class="input-group">
+                <label for="interestRate">Taxa de Juros Anual (%)</label>
+                <input type="number" id="interestRate" step="0.01" min="0" required>
+            </div>
+            
+            <div class="input-group">
+                <label for="investmentPeriod">Período de Investimento (meses)</label>
+                <input type="number" id="investmentPeriod" min="1" required>
+            </div>
+            
+            <button type="submit">Calcular</button>
+        </form>
+        
+        <div id="resultsContainer" class="hidden">
+            <h2>Resultados</h2>
+            <table id="monthlyResults">
+                <thead>
+                    <tr>
+                        <th>Mês</th>
+                        <th>Contribuição</th>
+                        <th>Investimento Acumulado</th>
+                        <th>Rendimento</th>
+                    </tr>
+                </thead>
+                <tbody id="monthlyResultsBody">
+                    <!-- Resultados serão inseridos dinamicamente aqui -->
+                </tbody>
+            </table>
+            
+            <div class="summary">
+                <p>Investimento Total: <span id="totalInvested"></span></p>
+                <p>Rendimento Total: <span id="totalInterest"></span></p>
+                <p>Valor Final: <span id="finalAmount"></span></p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
